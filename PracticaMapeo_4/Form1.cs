@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PracticaMapeo_4.BLL;
+using PracticaMapeo_4.Factory;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,23 @@ namespace PracticaMapeo_4
 {
     public partial class Form1 : Form
     {
+        private readonly GeneroBLL generoBLL;
         public Form1()
         {
             InitializeComponent();
+            generoBLL = GeneroFactory.CrearInstancia();
+            RefrescarGrillas();
+        }
+
+        private void RefrescarGrillas()
+        {
+            grillaGenero.DataSource = null;
+            grillaGenero.DataSource = generoBLL.ListarGeneros();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
