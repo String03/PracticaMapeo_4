@@ -13,7 +13,7 @@ namespace PracticaMapeo_4.DAO
     public class DAL
     {
         private readonly IMapeo mapeo;
-        private readonly string connectionString = ConfigurationManager.ConnectionStrings["PringlesDB"].ConnectionString;
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["MapeoDB"].ConnectionString;
 
         public DAL(IMapeo mapeo)
         {
